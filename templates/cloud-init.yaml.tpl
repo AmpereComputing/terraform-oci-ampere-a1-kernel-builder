@@ -24,6 +24,10 @@ packages:
   - libffi-dev
   - gcc
   - libssl-dev
+  - flex
+  - bison
+  - libelf++0
+  - libelf-dev
   - kernel-package
   - build-essential
 
@@ -35,4 +39,4 @@ system_info:
 
 runcmd:
   - 'git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git /usr/src/linux-next' 
-  - 'cd /usr/src/linux-next && make-kpkg kernel-image kernel-source --initrd --append-to-version=.ampere'
+  - 'cd /usr/src/linux-next && fakeroot make-kpkg kernel-image kernel-source --initrd --append-to-version=.ampere'
