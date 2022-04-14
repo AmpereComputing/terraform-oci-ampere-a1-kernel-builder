@@ -26,7 +26,7 @@ Addtional tasks performed by this code:
 * Dynamically creating sshkeys to use when logging into the instance.
 * Dynamically getting region, availability zone and image id..
 * Creating necessary core networking configurations for the tenancy
-* Rendering metadata to pass into the Ampere A1 instance to build OpenStack Kolla Images.
+* Rendering metadata to pass into the Ampere A1 instance to build a linux-next kernel package.
 * Launch Ampere A1 instance with metadata and ssh keys.
 * Output IP information to connect to the instance.
 
