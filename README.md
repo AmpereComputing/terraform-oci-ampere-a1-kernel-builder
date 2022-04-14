@@ -55,7 +55,7 @@ variable "user_ocid" {}
 variable "fingerprint" {}
 variable "private_key_path" {}
 
-module "oci-ampere-openstack-kolla-image-builder" {
+module "oci-ampere-a1-kernel-builder" {
   source                        = "github.com/amperecomputing/terraform-oci-ampere-a1-kernel-builder"
   tenancy_ocid                  = var.tenancy_ocid
   user_ocid                     = var.user_ocid
