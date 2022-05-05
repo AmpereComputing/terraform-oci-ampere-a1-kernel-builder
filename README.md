@@ -26,7 +26,7 @@ Addtional tasks performed by this code:
 * Dynamically creating sshkeys to use when logging into the instance.
 * Dynamically getting region, availability zone and image id..
 * Creating necessary core networking configurations for the tenancy
-* Rendering metadata to pass into the Ampere A1 instance to build OpenStack Kolla Images.
+* Rendering metadata to pass into the Ampere A1 instance to build a linux-next kernel package.
 * Launch Ampere A1 instance with metadata and ssh keys.
 * Output IP information to connect to the instance.
 
@@ -55,7 +55,7 @@ variable "user_ocid" {}
 variable "fingerprint" {}
 variable "private_key_path" {}
 
-module "oci-ampere-openstack-kolla-image-builder" {
+module "oci-ampere-a1-kernel-builder" {
   source                        = "github.com/amperecomputing/terraform-oci-ampere-a1-kernel-builder"
   tenancy_ocid                  = var.tenancy_ocid
   user_ocid                     = var.user_ocid
