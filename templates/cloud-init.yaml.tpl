@@ -28,8 +28,21 @@ packages:
   - bison
   - libelf++0
   - libelf-dev
+  - fakeroot
   - kernel-package
   - build-essential
+  - crash
+  - kexec-tools
+  - makedumpfile
+  - kernel-wedge
+  - build-dep
+  - libncurses5
+  - libncurses5-dev
+  - asciidoc
+  - binutils-dev
+  - zstd
+  - git-email
+  - git-doc
 
 groups:
   - docker
@@ -39,4 +52,4 @@ system_info:
 
 runcmd:
   - 'git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git /usr/src/linux-next' 
-  - 'cd /usr/src/linux-next && fakeroot make-kpkg kernel-image kernel-source --initrd --append-to-version=.ampere'
+  - 'cd /usr/src/linux-next && scripts/config --disable SYSTEM_REVOCATION_KEYS && scripts/config --disable SYSTEM_TRUSTED_KEYS && time fakeroot make-kpkg kernel-image kernel-source --initrd --append-to-version=.ampere'
